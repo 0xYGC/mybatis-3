@@ -1,0 +1,29 @@
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 标签有前后设置 -->
+
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <setting name="autoMappingBehavior" value="FULL"/>
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://yanggc.com:3306/s2b2c?useUnicode=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="useradmin"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="org/apache/ibatis/example/mapper/UserMapper.xml"/>
+    </mappers>
+
+</configuration>
